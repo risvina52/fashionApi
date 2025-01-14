@@ -46,7 +46,11 @@ app.post('/api/login', (req, res) => {
 
 // GET all fashion items
 app.get('/api/fashion', authenticateToken, (req, res) => {
-    res.json(fashionItems);
+    res.json({
+        data: fashionItems,
+        status: 200,
+        statusText: "OK"
+    });
 });
 
 // GET a single fashion item by ID
